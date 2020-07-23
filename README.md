@@ -23,5 +23,5 @@ c)Give more training to the rater about the subject in question increase true po
 
 Ans)
 
-select p.rater ,count(p.raterans3label) * 100.0 / (select count(*)  from  populated as c where p.rater = c.rater and date="2005-10-06" ) 
-from populated as p where p.raterans3label = p.correctans3label and date="2005-10-06" group by p.rater;
+select p.rater ,count(p.raterans3label) * 100.0 / (select count(*)  from  rater_data as c where p.rater = c.rater and date="2005-10-06" ) 
+from rater_data as p where p.raterans3label = p.correctans3label and date="2005-10-06" group by p.rater;
